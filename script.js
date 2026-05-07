@@ -67,10 +67,17 @@ function alterarQuantidade(index, delta) {
 
 function limparLista() {
     if (compras.length === 0) return;
-    if (confirm("Tem certeza que deseja apagar toda a lista de compras?")) {
-        compras = [];
-        renderizar();
-    }
+    document.getElementById('modalConfirmacao').style.display = 'flex';
+}
+
+function fecharModal() {
+    document.getElementById('modalConfirmacao').style.display = 'none';
+}
+
+function confirmarLimpeza() {
+    compras = [];
+    renderizar();
+    fecharModal();
 }
 
 // Theme toggle logic
