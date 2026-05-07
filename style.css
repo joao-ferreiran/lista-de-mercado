@@ -3,6 +3,27 @@
     --danger: #ef4444;
     --bg: #f8fafc;
     --text: #1e293b;
+    --card-bg: #ffffff;
+    --input-bg: #f1f5f9;
+    --item-bg: #ffffff;
+    --item-border: #f1f5f9;
+    --text-muted: #64748b;
+    --danger-bg: #fee2e2;
+    --primary-bg: #e0e7ff;
+}
+
+[data-theme="dark"] {
+    --primary: #3b82f6;
+    --danger: #f87171;
+    --bg: #0f172a;
+    --text: #f8fafc;
+    --card-bg: #1e293b;
+    --input-bg: #0f172a;
+    --item-bg: #1e293b;
+    --item-border: #334155;
+    --text-muted: #94a3b8;
+    --danger-bg: #451a1a;
+    --primary-bg: #1e3a8a;
 }
 
 * {
@@ -22,7 +43,7 @@ body {
 }
 
 .app-card {
-    background: white;
+    background: var(--card-bg);
     width: 100%;
     max-width: 450px;
     border-radius: 24px;
@@ -47,7 +68,7 @@ header h1 {
 }
 
 input {
-    background: #f1f5f9;
+    background: var(--input-bg);
     border: 2px solid transparent;
     padding: 12px;
     border-radius: 12px;
@@ -58,7 +79,7 @@ input {
 
 input:focus {
     border-color: var(--primary);
-    background: white;
+    background: var(--card-bg);
 }
 
 #itemInput {
@@ -101,10 +122,10 @@ li {
     align-items: center;
     gap: 10px;
     padding: 14px;
-    background: #fff;
+    background: var(--item-bg);
     border-radius: 16px;
     margin-bottom: 10px;
-    border: 1px solid #f1f5f9;
+    border: 1px solid var(--item-border);
     animation: fadeIn 0.3s ease;
 }
 
@@ -123,12 +144,12 @@ li {
 
 .item-price {
     font-size: 0.85rem;
-    color: #64748b;
+    color: var(--text-muted);
 }
 
 .btn-remove {
     color: var(--danger);
-    background: #fee2e2;
+    background: var(--danger-bg);
     border: none;
     padding: 8px;
     border-radius: 8px;
@@ -146,7 +167,7 @@ li {
 
 .btn-qty {
     color: var(--primary);
-    background: #e0e7ff;
+    background: var(--primary-bg);
     border: none;
     padding: 8px;
     border-radius: 8px;
@@ -177,5 +198,21 @@ li {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsividade Mobile - Modo App Nativo */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        align-items: flex-start;
+    }
+    
+    .app-card {
+        height: 100dvh; /* Ajusta perfeitamente na tela do celular (Dynamic Viewport) */
+        max-height: 100dvh;
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: none;
     }
 }
