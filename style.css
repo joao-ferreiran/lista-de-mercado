@@ -1,0 +1,181 @@
+:root {
+    --primary: #2563eb;
+    --danger: #ef4444;
+    --bg: #f8fafc;
+    --text: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.app-card {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    /*altura fixa para scroll interno */
+}
+
+header h1 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+input {
+    background: #f1f5f9;
+    border: 2px solid transparent;
+    padding: 12px;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s;
+    min-width: 0;
+}
+
+input:focus {
+    border-color: var(--primary);
+    background: white;
+}
+
+#itemInput {
+    flex: 2;
+    min-width: 0;
+}
+
+#qtdInput {
+    flex: 0.8;
+    min-width: 0;
+}
+
+#valorInput {
+    flex: 1.2;
+    min-width: 0;
+}
+
+.btn-add {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    background: #fff;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #f1f5f9;
+    animation: fadeIn 0.3s ease;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+}
+
+.item-name {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.item-price {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.btn-remove {
+    color: var(--danger);
+    background: #fee2e2;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-qty {
+    color: var(--primary);
+    background: #e0e7ff;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.total-footer {
+    background: var(--text);
+    color: white;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.total-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

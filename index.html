@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market List Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+
+<body>
+    <div class="app-card">
+        <header>
+            <h1> 🛒 Mercado</h1>
+            <p id="data-atual"></p>
+        </header>
+        <div class="input-container">
+            <input type="text" id="itemInput" placeholder="Item...">
+            <input type="number" id="qtdInput" placeholder="Qtd" value="1" min="1">
+            <input type="number" id="valorInput" placeholder="R$">
+            <button onclick="adicionarItem()" class="btn-add">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            </button>
+        </div>
+        <ul id="listaCompras" class="scroll-area"></ul>
+        <footer class="total-footer">
+            <div class="total-info">
+                <span>Total da Compra</span>
+                <h2 id="valorTotal"> R$ 0,00 </h2>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then(reg => {
+                    console.log('Service Worker registrado!', reg);
+                }).catch(err => {
+                    console.error('Falha ao registrar Service Worker', err);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
