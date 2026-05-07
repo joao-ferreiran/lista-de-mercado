@@ -69,13 +69,16 @@ function alterarQuantidade(index, delta) {
 let isDark = localStorage.getItem('marketList_theme') === 'dark';
 
 function applyTheme() {
-    const themeIcon = document.getElementById('themeIcon');
+    const iconMoon = document.getElementById('icon-moon');
+    const iconSun = document.getElementById('icon-sun');
     if (isDark) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>'; // Sun icon
+        if(iconMoon) iconMoon.style.display = 'none';
+        if(iconSun) iconSun.style.display = 'block';
     } else {
         document.documentElement.removeAttribute('data-theme');
-        themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>'; // Moon icon
+        if(iconMoon) iconMoon.style.display = 'block';
+        if(iconSun) iconSun.style.display = 'none';
     }
 }
 

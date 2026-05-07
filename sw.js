@@ -1,4 +1,4 @@
-const CACHE_NAME = 'market-list-v3';
+const CACHE_NAME = 'market-list-v4';
 const urlsToCache = [
   './',
   './index.html',
