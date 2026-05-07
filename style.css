@@ -5,11 +5,14 @@
     --text: #1e293b;
     --card-bg: #ffffff;
     --input-bg: #f1f5f9;
+    --input-text: #1e293b;
     --item-bg: #ffffff;
     --item-border: #f1f5f9;
     --text-muted: #64748b;
     --danger-bg: #fee2e2;
     --primary-bg: #e0e7ff;
+    --footer-bg: #1e293b;
+    --footer-text: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -18,12 +21,15 @@
     --bg: #0f172a;
     --text: #f8fafc;
     --card-bg: #1e293b;
-    --input-bg: #0f172a;
+    --input-bg: #334155;
+    --input-text: #f8fafc;
     --item-bg: #1e293b;
     --item-border: #334155;
     --text-muted: #94a3b8;
     --danger-bg: #451a1a;
     --primary-bg: #1e3a8a;
+    --footer-bg: #0f172a;
+    --footer-text: #f8fafc;
 }
 
 * {
@@ -35,6 +41,7 @@
 
 body {
     background: var(--bg);
+    color: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +76,7 @@ header h1 {
 
 input {
     background: var(--input-bg);
+    color: var(--input-text);
     border: 2px solid transparent;
     padding: 12px;
     border-radius: 12px;
@@ -177,8 +185,8 @@ li {
 }
 
 .total-footer {
-    background: var(--text);
-    color: white;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding: 20px;
     border-radius: 18px;
 }
