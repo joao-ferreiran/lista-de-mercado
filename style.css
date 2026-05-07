@@ -215,4 +215,25 @@ li {
         padding: 20px;
         box-shadow: none;
     }
+    
+    .input-container {
+        flex-wrap: wrap;
+    }
+    
+    #itemInput {
+        flex: 1 1 100%;
+        margin-bottom: 5px;
+    }
+    
+    #qtdInput {
+        flex: 1;
+    }
+    
+    #valorInput {
+        flex: 2;
+    }
+    
+    .btn-add {
+        flex: 1;
+    }
 }
