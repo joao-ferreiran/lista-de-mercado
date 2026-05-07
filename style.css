@@ -197,6 +197,27 @@ li {
     align-items: center;
 }
 
+.btn-clear-all {
+    width: 100%;
+    background: var(--danger-bg);
+    color: var(--danger);
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-clear-all:active {
+    opacity: 0.8;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
